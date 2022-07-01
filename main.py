@@ -36,10 +36,11 @@ import cv2
 # model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # 'ultralytics/yolov5', 'yolov5s'
 # model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')  # default
 model = torch.hub.load('yolov5-master', 'custom', path='yolov5s.pt', source='local')
+model.conf = 0.1
 # model = torch.hub.load('path/to/yolov5', 'custom', path='yolov5-master/best.pt', source='local')  # local repo
 
 # load picture
-frame = cv2.imread('860x394.jpg')
+frame = cv2.imread('A_test.jpg')
 
 # detect
 # detections = model(frame[..., ::-1])
@@ -55,7 +56,7 @@ for result in results:
     confidence = result['confidence']
     name = result['name']
     clas = result['class']
-    if clas == 2:
+    if clas == 0:
         x1 = int(result['xmin'])
         y1 = int(result['ymin'])
         x2 = int(result['xmax'])
