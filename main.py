@@ -40,7 +40,7 @@ model.conf = 0.1
 # model = torch.hub.load('path/to/yolov5', 'custom', path='yolov5-master/best.pt', source='local')  # local repo
 
 # load picture
-frame = cv2.imread('A_test.jpg')
+frame = cv2.imread('860x394.jpg')
 
 # detect
 # detections = model(frame[..., ::-1])
